@@ -1,8 +1,6 @@
 import { getBlogPosts } from "@/data/blog";
 import Link from "next/link";
 import { Search, ArrowRight } from "lucide-react";
-import Image from 'next/image';
-
 
 export const metadata = {
   title: "Blog",
@@ -41,33 +39,22 @@ export default async function BlogPage() {
           Featured Post
         </h2>
         <div className="bg-gray-50 rounded-lg shadow-lg overflow-hidden animate-fade-in-up animate-delay-100">
-          <div className="md:flex">
-            <div className="md:flex-shrink-0">
-            <Image
-              className="h-48 w-full object-cover md:w-48 animate-slide-in-left"
-              src=""
-              alt="Featured Post"
-              width={400}  // Adjust the width as needed
-              height={320}  // Adjust the height as needed
-            />
-            </div>
-            <div className="p-8">
-              <h3 className="text-2xl font-semibold mb-2 text-gray-900 animate-fade-in-up">
-                An Exciting Journey Begins
-              </h3>
-              <p className="text-gray-600 animate-fade-in-up animate-delay-100">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                malesuada velit vel velit bibendum, vel bibendum odio facilisis.
-              </p>
-              <div className="mt-4 animate-fade-in-up animate-delay-200">
-                <Link
-                  href="/blog/featured-post"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-800 transition duration-300"
-                >
-                  Read more
-                  <ArrowRight className="ml-2" size={20} />
-                </Link>
-              </div>
+          <div className="p-8">
+            <h3 className="text-2xl font-semibold mb-2 text-gray-900 animate-fade-in-up">
+              An Exciting Journey Begins
+            </h3>
+            <p className="text-gray-600 animate-fade-in-up animate-delay-100">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+              malesuada velit vel velit bibendum, vel bibendum odio facilisis.
+            </p>
+            <div className="mt-4 animate-fade-in-up animate-delay-200">
+              <Link
+                href="/blog/featured-post"
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 transition duration-300"
+              >
+                Read more
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
             </div>
           </div>
         </div>
@@ -76,24 +63,20 @@ export default async function BlogPage() {
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           <div
-            key={post.slug}
+            key={post?.slug || ''}
             className="rounded-lg shadow-lg bg-gray-50 overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
           >
-            <Link href={`/blog/${post.slug}`}>
-              <Image
-                src=""
-                alt={post.metadata.title}
-                className="w-full h-48 object-cover"
-              />
-              
+            <Link href={`/blog/${post?.slug || ''}`}>
               <div className="p-6">
                 <h2 className="font-semibold text-xl mb-2 text-gray-900">
-                  {post.metadata.title}
+                  {post?.metadata?.title || 'Untitled'}
                 </h2>
                 <p className="text-sm text-gray-500">
-                  {new Date(post.metadata.publishedAt).toLocaleDateString()}
+                  {post?.metadata?.publishedAt 
+                    ? new Date(post.metadata.publishedAt).toLocaleDateString()
+                    : 'Date not available'}
                 </p>
-                <p className="mt-4 text-gray-600">{post.metadata.excerpt}</p>
+                <p className="mt-4 text-gray-600">{post?.metadata?.excerpt || 'No excerpt available'}</p>
               </div>
             </Link>
           </div>
