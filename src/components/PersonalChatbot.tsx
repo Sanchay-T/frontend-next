@@ -26,11 +26,11 @@ const QuickActionButton: React.FC<{ icon: React.ElementType; label: string; onCl
 const OnboardingTutorial: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     const [step, setStep] = useState(0);
     const steps = [
-      { title: "Welcome!", content: "Let's take a quick tour of your new AI assistant." },
+      { title: "Welcome!", content: "Let's take a quick tour of Sanchay's AI, a clone of his brain." },
       { title: "Ask Anything", content: "Type your questions or commands in the input box at the bottom." },
       { title: "Quick Actions", content: "Use these buttons for common tasks like checking your schedule or weather." },
       { title: "Voice Input", content: "Click the microphone icon to use voice input for your queries." },
-      { title: "You're All Set!", content: "Feel free to start chatting with your AI assistant now!" }
+      { title: "You're All Set!", content: "Feel free to start chatting with Sanchay's AI now!" }
     ];
   
     return (
@@ -212,8 +212,9 @@ const PersonalChatbot: React.FC = () => {
       <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-white dark:bg-gray-900 transition-colors duration-300">
         {showWelcome && (
           <div className="text-center py-10 animate-fade-in">
-            <h1 className="text-4xl font-bold mb-4">Welcome to Your Personal AI Assistant</h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">I&#39;m here to help you with various tasks. What would you like to do?</p>
+            <h1 className="text-4xl font-bold mb-4">Welcome to Sanchay&#39;s AI</h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">I&#39;m here to help you with various tasks. What would you like to do? Remember, I'm a clone of Sanchay's brain!</p>
+
 
             <div className="flex flex-wrap justify-center gap-4">
               <QuickActionButton icon={Calendar} label="Check Schedule" onClick={() => handleQuickAction("What's on my schedule today?")} />
