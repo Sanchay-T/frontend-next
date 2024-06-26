@@ -1,6 +1,8 @@
 import { getBlogPosts } from "@/data/blog";
 import Link from "next/link";
 import { Search, ArrowRight } from "lucide-react";
+import Image from 'next/image';
+
 
 export const metadata = {
   title: "Blog",
@@ -41,11 +43,13 @@ export default async function BlogPage() {
         <div className="bg-gray-50 rounded-lg shadow-lg overflow-hidden animate-fade-in-up animate-delay-100">
           <div className="md:flex">
             <div className="md:flex-shrink-0">
-              <img
-                className="h-48 w-full object-cover md:w-48 animate-slide-in-left"
-                src="/api/placeholder/400/320"
-                alt="Featured Post"
-              />
+            <Image
+              className="h-48 w-full object-cover md:w-48 animate-slide-in-left"
+              src=""
+              alt="Featured Post"
+              width={400}  // Adjust the width as needed
+              height={320}  // Adjust the height as needed
+            />
             </div>
             <div className="p-8">
               <h3 className="text-2xl font-semibold mb-2 text-gray-900 animate-fade-in-up">
@@ -76,11 +80,12 @@ export default async function BlogPage() {
             className="rounded-lg shadow-lg bg-gray-50 overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
           >
             <Link href={`/blog/${post.slug}`}>
-              <img
-                src="/api/placeholder/400/320"
+              <Image
+                src=""
                 alt={post.metadata.title}
                 className="w-full h-48 object-cover"
               />
+              
               <div className="p-6">
                 <h2 className="font-semibold text-xl mb-2 text-gray-900">
                   {post.metadata.title}

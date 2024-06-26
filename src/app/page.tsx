@@ -279,8 +279,8 @@ export default function Page() {
           Connect with me
         </div>
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-          Let's Chat
-        </h2>
+        Let&apos;s Chat
+      </h2>
         <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
           Schedule a meeting with me or reach out via email.
         </p>
