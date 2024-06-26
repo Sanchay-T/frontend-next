@@ -1,7 +1,7 @@
 /* Base styles for the calendar container */
 .cal-container {
   width: 100%; /* Full width on smaller screens */
-  max-width: 100px; /* Maximum width to maintain design integrity */
+  max-width: 1000px; /* Maximum width to maintain design integrity */
   margin: auto; /* Centering the calendar */
   height: 60vh; /* Responsive height */
   overflow: auto; /* Adding scroll for overflow */
