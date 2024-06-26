@@ -7,19 +7,11 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 
-export type Metadata = {
+type Metadata = {
   title: string;
   publishedAt: string;
   summary: string;
   image?: string;
-  excerpt: string;
-};
-
-export type Post = {
-  source: string;
-  metadata: Metadata;
-  slug: string;
-  content: string;
 };
 
 function getMDXFiles(dir: string) {
@@ -31,6 +23,7 @@ export async function markdownToHTML(markdown: string) {
     .use(remarkParse)
     .use(remarkRehype)
     .use(rehypePrettyCode, {
+      // https://rehype-pretty.pages.dev/#usage
       theme: {
         light: "min-light",
         dark: "min-dark",
@@ -43,44 +36,33 @@ export async function markdownToHTML(markdown: string) {
   return p.toString();
 }
 
-export async function getPost(slug: string): Promise<Post | null> {
+export async function getPost(slug: string) {
   const filePath = path.join("content", `${slug}.mdx`);
-  if (!fs.existsSync(filePath)) {
-    return null;
-  }
-
-  const source = fs.readFileSync(filePath, "utf-8");
+  let source = fs.readFileSync(filePath, "utf-8");
   const { content: rawContent, data: metadata } = matter(source);
   const content = await markdownToHTML(rawContent);
-
   return {
-    source,
-    metadata: metadata as Metadata,
+    source: content,
+    metadata,
     slug,
-    content,
   };
 }
 
 async function getAllPosts(dir: string) {
-  const mdxFiles = getMDXFiles(dir);
+  let mdxFiles = getMDXFiles(dir);
   return Promise.all(
     mdxFiles.map(async (file) => {
-      const slug = path.basename(file, path.extname(file));
-      const post = await getPost(slug);
-      if (post) {
-        const { metadata, source } = post;
-        return {
-          metadata,
-          slug,
-          source,
-        };
-      }
-      return null;
+      let slug = path.basename(file, path.extname(file));
+      let { metadata, source } = await getPost(slug);
+      return {
+        metadata,
+        slug,
+        source,
+      };
     })
   );
 }
 
-export async function getBlogPosts(): Promise<Omit<Post, 'content'>[]> {
-  const posts = await getAllPosts(path.join(process.cwd(), "content"));
-  return posts.filter((post): post is Omit<Post, 'content'> => post !== null);
+export async function getBlogPosts() {
+  return getAllPosts(path.join(process.cwd(), "content"));
 }
