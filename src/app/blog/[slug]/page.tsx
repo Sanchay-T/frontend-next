@@ -3,7 +3,13 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import BlurFade from "@/components/magicui/blur-fade";
 
-export async function generateMetadata({ params }) {
+// Define the Params interface
+interface Params {
+  slug: string;
+}
+
+// Update the generateMetadata function
+export async function generateMetadata({ params }: { params: Params }) {
   const post = await getPost(params.slug);
   if (!post) return {};
 
@@ -13,7 +19,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function BlogPost({ params }) {
+// Update the BlogPost function
+export default async function BlogPost({ params }: { params: Params }) {
   const post = await getPost(params.slug);
 
   if (!post) notFound();
@@ -42,7 +49,7 @@ export default async function BlogPost({ params }) {
         )}
         <div 
           className="prose dark:prose-invert max-w-none"
-          dangerouslySetInullHTML={{ __html: post.content }}
+          dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </BlurFade>
     </article>
