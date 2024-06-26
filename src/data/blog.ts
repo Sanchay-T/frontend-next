@@ -14,6 +14,13 @@ type Metadata = {
   image?: string;
 };
 
+type Post = {
+  source: string;
+  metadata: Metadata;
+  slug: string;
+  content: string; // Add content property
+};
+
 function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
 }
@@ -36,30 +43,39 @@ export async function markdownToHTML(markdown: string) {
   return p.toString();
 }
 
-export async function getPost(slug: string) {
+export async function getPost(slug: string): Promise<Post | null> {
   const filePath = path.join("content", `${slug}.mdx`);
-  let source = fs.readFileSync(filePath, "utf-8");
+  if (!fs.existsSync(filePath)) {
+    return null; // Return null if the file does not exist
+  }
+
+  const source = fs.readFileSync(filePath, "utf-8");
   const { content: rawContent, data: metadata } = matter(source);
   const content = await markdownToHTML(rawContent);
+
   return {
-    source: content,
-    metadata,
+    source,
+    metadata: metadata as Metadata,
     slug,
-    
+    content, // Ensure content property is included
   };
 }
 
 async function getAllPosts(dir: string) {
-  let mdxFiles = getMDXFiles(dir);
+  const mdxFiles = getMDXFiles(dir);
   return Promise.all(
     mdxFiles.map(async (file) => {
-      let slug = path.basename(file, path.extname(file));
-      let { metadata, source } = await getPost(slug);
-      return {
-        metadata,
-        slug,
-        source,
-      };
+      const slug = path.basename(file, path.extname(file));
+      const post = await getPost(slug);
+      if (post) {
+        const { metadata, source } = post;
+        return {
+          metadata,
+          slug,
+          source,
+        };
+      }
+      return null;
     })
   );
 }

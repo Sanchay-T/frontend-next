@@ -1,14 +1,27 @@
+// src/app/blog/[slug]/page.tsx
+
 import { getPost } from "@/data/blog";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import BlurFade from "@/components/magicui/blur-fade";
 
-// Define the Params interface
 interface Params {
   slug: string;
 }
 
-// Update the generateMetadata function
+interface Post {
+  source: string;
+  metadata: {
+    [key: string]: any;
+    title: string;
+    summary: string;
+    publishedAt: string;
+    image?: string;
+  };
+  slug: string;
+  content: string; // Ensure content property is included
+}
+
 export async function generateMetadata({ params }: { params: Params }) {
   const post = await getPost(params.slug);
   if (!post) return {};
@@ -19,7 +32,6 @@ export async function generateMetadata({ params }: { params: Params }) {
   };
 }
 
-// Update the BlogPost function
 export default async function BlogPost({ params }: { params: Params }) {
   const post = await getPost(params.slug);
 
