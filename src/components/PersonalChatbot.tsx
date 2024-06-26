@@ -213,7 +213,7 @@ const PersonalChatbot: React.FC = () => {
         {showWelcome && (
           <div className="text-center py-10 animate-fade-in">
             <h1 className="text-4xl font-bold mb-4">Welcome to Sanchay&#39;s AI</h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">I&#39;m here to help you with various tasks. What would you like to do? Remember, I'm a clone of Sanchay's brain!</p>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">I&#39;m here to help you with various tasks. What would you like to do? Remember, I&#39;m a clone of Sanchay&#39;s brain!</p>
 
 
             <div className="flex flex-wrap justify-center gap-4">
