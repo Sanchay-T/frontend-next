@@ -10,7 +10,7 @@
 /* Desktop-specific adjustments */
 @media (min-width: 768px) { /* Adjust the breakpoint as necessary */
   .cal-container {
-    width: 80%; /* Slightly less width on larger screens for better aesthetics */
+    width: 55%; /* Slightly less width on larger screens for better aesthetics */
     height: 75vh; /* Taller calendar on desktop */
   }
 }
