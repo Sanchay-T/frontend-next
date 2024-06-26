@@ -149,22 +149,6 @@ const PersonalChatbot: React.FC = () => {
     document.documentElement.classList.toggle('dark');
   };
 
-  // const startListening = () => {
-  //   setIsListening(true);
-  //   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  //   if (SpeechRecognition) {
-  //     const recognition = new SpeechRecognition();
-  //     recognition.onresult = (event) => {
-  //       const transcript = event.results[0][0].transcript;
-  //       setInput(transcript);
-  //       setIsListening(false);
-  //     };
-  //     recognition.start();
-  //   } else {
-  //     alert('Speech recognition is not supported in this browser.');
-  //     setIsListening(false);
-  //   }
-  // };
 
   const exportChat = () => {
     const chatText = messages.map(m => `${m.role}: ${m.content}`).join('\n\n');
@@ -197,7 +181,8 @@ const PersonalChatbot: React.FC = () => {
     // Simulate response generation with tool usage
     const toolResponses = [
       { name: 'Calendar', response: 'You have a meeting at 3 PM today.' },
-      { name: 'Weather', response: 'It\'s currently 72°F and sunny.' },
+      { name: 'Weather', response: 'It&#39;s currently 72°F and sunny.' },
+
       { name: 'Notes', response: 'Last note: Remember to buy groceries.' },
     ];
 
