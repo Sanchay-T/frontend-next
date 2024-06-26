@@ -61,7 +61,7 @@ export default async function BlogPage() {
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
+        {posts.map((post: Post) => (
           <div
             key={post.slug}
             className="rounded-lg shadow-lg bg-gray-50 overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
