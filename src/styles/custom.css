@@ -1,9 +1,9 @@
 /* Base styles for the calendar container */
 .cal-container {
-  width: 120%;  /* Full width to ensure it scales down on mobile */
-  max-width: 800px;  /* Restrict maximum width on larger screens */
+  width: 100%;  /* Full width to ensure it scales down on mobile */
+  max-width: 900px;  /* Restrict maximum width on larger screens */
   margin: auto;  /* Center the calendar within its container */
-  height: 60vh;  /* Relative height based on the viewport */
+  height: 70vh;  /* Relative height based on the viewport */
   overflow: auto;  /* Scrollbars if content overflows */
 }
 
