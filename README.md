@@ -16,7 +16,7 @@ Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://
 
 # Getting Started Locally
 
-1. Clone this repository to your local machine:
+1. Clone this repository to your local:
 
    ```bash
    git clone https://github.com/dillionverma/portfolio
