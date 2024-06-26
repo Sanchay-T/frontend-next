@@ -1,6 +1,7 @@
 import { getBlogPosts } from "@/data/blog";
 import Link from "next/link";
 import { Search, ArrowRight } from "lucide-react";
+import type { Post } from "@/data/blog";
 
 export const metadata = {
   title: "Blog",
@@ -63,20 +64,18 @@ export default async function BlogPage() {
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           <div
-            key={post?.slug || ''}
+            key={post.slug}
             className="rounded-lg shadow-lg bg-gray-50 overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
           >
-            <Link href={`/blog/${post?.slug || ''}`}>
+            <Link href={`/blog/${post.slug}`}>
               <div className="p-6">
                 <h2 className="font-semibold text-xl mb-2 text-gray-900">
-                  {post?.metadata?.title || 'Untitled'}
+                  {post.metadata.title}
                 </h2>
                 <p className="text-sm text-gray-500">
-                  {post?.metadata?.publishedAt 
-                    ? new Date(post.metadata.publishedAt).toLocaleDateString()
-                    : 'Date not available'}
+                  {new Date(post.metadata.publishedAt).toLocaleDateString()}
                 </p>
-                <p className="mt-4 text-gray-600">{post?.metadata?.excerpt || 'No excerpt available'}</p>
+                <p className="mt-4 text-gray-600">{post.metadata.summary}</p>
               </div>
             </Link>
           </div>
