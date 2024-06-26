@@ -9,8 +9,8 @@ import {
 } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
-import { HomeIcon, NotebookIcon } from "lucide-react";
 import Link from "next/link";
+import { HomeIcon, NotebookIcon, MessageCircleIcon } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -50,6 +50,24 @@ export default function Navbar() {
             </TooltipTrigger>
             <TooltipContent>
               <p>Blog</p>
+            </TooltipContent>
+          </Tooltip>
+        </DockIcon>
+        <DockIcon>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href="/chat"
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "icon" }),
+                  "size-12"
+                )}
+              >
+                <MessageCircleIcon className="size-4" />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Chat</p>
             </TooltipContent>
           </Tooltip>
         </DockIcon>

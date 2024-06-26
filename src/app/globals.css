@@ -28,7 +28,7 @@
       --destructive: 0 84.2% 60.2%;
       --destructive-foreground: 0 0% 98%;
 
-      --border: 0 0% 89.8%;
+      --border: 0 0% 79.8%;
       --input: 0 0% 89.8%;
       --ring: 0 0% 3.9%;
 
@@ -141,4 +141,56 @@ code[data-line-numbers-max-digits="2"] > [data-line]::before {
  
 code[data-line-numbers-max-digits="3"] > [data-line]::before {
   width: 3rem;
+}
+
+.chat-container {
+  background-image: radial-gradient(circle at 2px 2px, gray 1px, transparent 0);
+  background-size: 40px 40px;
+  background-repeat: repeat;
+}
+
+
+
+.dark .chat-container {
+  background-color: #333; /* Adjust for dark mode */
+}
+
+
+.message {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.message-user {
+  background-color: #e1ffc7;
+  align-self: flex-end;
+  color: #000;
+  text-align: right;
+  margin-left: auto;
+  padding: 8px 12px;
+  margin-bottom: 4px;
+  border-radius: 10px;
+  max-width: fit-content; /* Allow dynamic sizing */
+}
+
+.message-assistant {
+  background-color: #f1f1f1;
+  align-self: flex-start;
+  color: #000;
+  text-align: left;
+  padding: 8px 12px;
+  margin-bottom: 4px;
+  border-radius: 10px;
+  max-width: fit-content; /* Allow dynamic sizing */
+}
+
+/* Dark mode styles */
+.dark .message-user {
+  background-color: #2d2d2d;
+  color: #e1ffc7;
+}
+
+.dark .message-assistant {
+  background-color: #3c3c3c;
+  color: #f1f1f1;
 }
