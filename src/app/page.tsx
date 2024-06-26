@@ -261,7 +261,7 @@ export default function Page() {
       </div>
     </BlurFade>
   </div>
-</section>
+      </section>
       
     </main>
   );

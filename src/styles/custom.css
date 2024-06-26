@@ -1,19 +1,20 @@
 /* Base styles for the calendar container */
 .cal-container {
-  width: 100%; /* Full width on smaller screens */
-  max-width: 1000px; /* Maximum width to maintain design integrity */
-  margin: auto; /* Centering the calendar */
-  height: 60vh; /* Responsive height */
-  overflow: auto; /* Adding scroll for overflow */
+  width: 120%;  /* Full width to ensure it scales down on mobile */
+  max-width: 800px;  /* Restrict maximum width on larger screens */
+  margin: auto;  /* Center the calendar within its container */
+  height: 60vh;  /* Relative height based on the viewport */
+  overflow: auto;  /* Scrollbars if content overflows */
 }
 
 /* Desktop-specific adjustments */
-@media (min-width: 768px) { /* Adjust the breakpoint as necessary */
+@media (min-width: 768px) {
   .cal-container {
-    width: 55%; /* Slightly less width on larger screens for better aesthetics */
-    height: 75vh; /* Taller calendar on desktop */
+    width: 55%;  /* Adjust this as needed to fit your design */
+    height: 75vh;  /* Larger height for desktop */
   }
 }
+
 
 
 .publications-section,
