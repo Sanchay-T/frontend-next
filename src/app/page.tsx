@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 import { FaTwitter, FaEnvelope } from 'react-icons/fa';
@@ -15,7 +15,6 @@ import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import Cal, { getCalApi } from "@calcom/embed-react";
-import { useEffect } from "react";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -41,33 +40,6 @@ const CalendarEmbed = () => {
   );
 };
 
-const PublicationCard = ({ publication, index }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  return (
-    <motion.div
-      className="publication-card"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
-      whileHover={{ scale: 1.05 }}
-      onClick={() => setIsFlipped(!isFlipped)}
-    >
-      <div className={`card-inner ${isFlipped ? 'is-flipped' : ''}`}>
-        <div className="card-front">
-          <h3>{publication.title}</h3>
-          <p>{publication.publisher}</p>
-        </div>
-        <div className="card-back">
-          <p>{publication.description}</p>
-          <a href={publication.url} target="_blank" rel="noopener noreferrer" className="read-paper-btn">
-            Read Paper <HiOutlineExternalLink />
-          </a>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
 
 export default function Page() {
   return (
@@ -143,15 +115,20 @@ export default function Page() {
               key={education.school}
               delay={BLUR_FADE_DELAY * 8 + id * 0.05}
             >
-              <ResumeCard
+               <ResumeCard
                 key={education.school}
-                href={education.href}
                 logoUrl={education.logoUrl}
                 altText={education.school}
                 title={education.school}
-                period={`${education.start} - ${education.end}`}
-                description={education.degree}
-              />
+                subtitle={education.degree}
+                href={education.website}
+                // Replace this line:
+                // period={`${education.start} - ${education.end}`}
+                // With these two lines:
+                start={education.start}
+                end={education.end}
+                location={education.location}
+  />
             </BlurFade>
           ))}
         </div>
@@ -253,24 +230,7 @@ export default function Page() {
             </ul>
           </BlurFade>
         </div>
-      </section>
-      <section id="publications" className="publications-section">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="section-title">Research & Publications</h2>
-          <p className="section-description">
-            Explore my contributions to academic research and industry journals.
-          </p>
-          <div className="publications-grid">
-            {DATA.publications.map((publication, index) => (
-              <PublicationCard key={publication.title} publication={publication} index={index} />
-            ))}
-          </div>
-        </motion.div>
-      </section>
+      </section>      
       <section id="contact">
   <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
     <BlurFade delay={BLUR_FADE_DELAY * 16}>

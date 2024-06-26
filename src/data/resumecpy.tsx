@@ -28,7 +28,7 @@ export const DATA = {
       },
       X: {
         url: "https://twitter.com/YourTwitterHandle", // Replace with your actual Twitter URL if you have one
-        icon: Icons.twitter,
+        icon: Icons.x,
       },
     },
   },
