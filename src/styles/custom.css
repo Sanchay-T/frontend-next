@@ -1,3 +1,21 @@
+/* Base styles for the calendar container */
+.cal-container {
+  width: 100%; /* Full width on smaller screens */
+  max-width: 800px; /* Maximum width to maintain design integrity */
+  margin: auto; /* Centering the calendar */
+  height: 60vh; /* Responsive height */
+  overflow: auto; /* Adding scroll for overflow */
+}
+
+/* Desktop-specific adjustments */
+@media (min-width: 768px) { /* Adjust the breakpoint as necessary */
+  .cal-container {
+    width: 80%; /* Slightly less width on larger screens for better aesthetics */
+    height: 75vh; /* Taller calendar on desktop */
+  }
+}
+
+
 .publications-section,
 .contact-section {
   padding: 4rem 0;

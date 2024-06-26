@@ -32,13 +32,15 @@ const CalendarEmbed = () => {
   }, []);
 
   return (
-    <Cal
-      calLink="sanchay-sachin-thalnerkar-k4acm3/15min"
-      style={{ width: "100%", maxWidth: "800px", height: "60vh", overflow: "auto" }}
-      config={{ layout: 'month_view' }}
-    />
+    <div className="cal-container">
+      <Cal
+        calLink="sanchay-sachin-thalnerkar-k4acm3/15min"
+        config={{ layout: 'month_view' }}
+      />
+    </div>
   );
 };
+
 
 
 
