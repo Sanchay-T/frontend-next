@@ -34,11 +34,12 @@ const CalendarEmbed = () => {
   return (
     <Cal
       calLink="sanchay-sachin-thalnerkar-k4acm3/15min"
-      style={{ width: "800px", height: "600px", overflow: "scroll" }}
+      style={{ width: "100%", maxWidth: "800px", height: "60vh", overflow: "auto" }}
       config={{ layout: 'month_view' }}
     />
   );
 };
+
 
 
 export default function Page() {
