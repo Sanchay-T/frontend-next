@@ -213,7 +213,8 @@ const PersonalChatbot: React.FC = () => {
         {showWelcome && (
           <div className="text-center py-10 animate-fade-in">
             <h1 className="text-4xl font-bold mb-4">Welcome to Your Personal AI Assistant</h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">I'm here to help you with various tasks. What would you like to do?</p>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">I&#39;m here to help you with various tasks. What would you like to do?</p>
+
             <div className="flex flex-wrap justify-center gap-4">
               <QuickActionButton icon={Calendar} label="Check Schedule" onClick={() => handleQuickAction("What's on my schedule today?")} />
               <QuickActionButton icon={Cloud} label="Get Weather" onClick={() => handleQuickAction("What's the weather like today?")} />
