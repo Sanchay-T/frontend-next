@@ -20,6 +20,23 @@ const BLUR_FADE_DELAY = 0.04;
 
 
 function CalendarEmbed() {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768); // 768px is a common breakpoint for tablets
+    };
+
+    // Set the initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   useEffect(() => {
     (async () => {
       const cal = await getCalApi();
@@ -31,11 +48,15 @@ function CalendarEmbed() {
     })();
   }, []);
 
+  const calendarStyle = isSmallScreen
+    ? { width: "100%", height: "80vh", overflow: "auto" }
+    : { width: "80vh", maxWidth: "800px", height: "65vh", overflow: "auto" };
+
   return (
-    <div className="w-full max-w-4xl mx-auto h-[600px] lg:h-[700px]">
-      <Cal 
+    <div className="w-full flex justify-center">
+      <Cal
         calLink="sanchay-sachin-thalnerkar-k4acm3/15min"
-        style={{ width: "100%", height: "100%", overflow: "auto" }}
+        style={calendarStyle}
         config={{ layout: 'month_view' }}
       />
     </div>
@@ -235,33 +256,33 @@ export default function Page() {
         </div>
       </section>      
       <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 16}>
-            <div className="space-y-3">
-              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                Connect with me
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Let's Chat
-              </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Schedule a meeting with me or reach out via email.
-              </p>
-            </div>
-          </BlurFade>
-          <BlurFade delay={BLUR_FADE_DELAY * 17}>
-            <div className="mt-8 flex flex-col items-center">
-              <CalendarEmbed />
-              <p className="mt-4">
-                Or email me at:{" "}
-                <a href={`mailto:${DATA.contact.email}`} className="text-blue-500 hover:underline">
-                  {DATA.contact.email}
-                </a>
-              </p>
-            </div>
-          </BlurFade>
+  <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
+    <BlurFade delay={BLUR_FADE_DELAY * 16}>
+      <div className="space-y-3">
+        <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+          Connect with me
         </div>
-      </section>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+        Let&apos;s Chat
+      </h2>
+        <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          Schedule a meeting with me or reach out via email.
+        </p>
+      </div>
+    </BlurFade>
+    <BlurFade delay={BLUR_FADE_DELAY * 17}>
+      <div className="mt-8 flex flex-col items-center">
+        <CalendarEmbed />
+        <p className="mt-4">
+          Or email me at:{" "}
+          <a href={`mailto:${DATA.contact.email}`} className="text-blue-500 hover:underline">
+            {DATA.contact.email}
+          </a>
+        </p>
+      </div>
+    </BlurFade>
+  </div>
+</section>
       
     </main>
   );
