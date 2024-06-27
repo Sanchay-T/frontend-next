@@ -1,5 +1,19 @@
 import { Icons } from "@/components/icons";
 
+
+type WorkItem = {
+  company: string;
+  title: string;
+  logoUrl: string;
+  start: string;
+  end: string;
+  description: string;
+  location: string;
+  href?: string;  // Make href optional
+  badges?: string[];  // Make badges optional
+  type?: string[];  // Make type optional
+};
+
 export const DATA = {
   name: "Sanchay Thalnerkar",
   initials: "ST",
@@ -39,12 +53,32 @@ export const DATA = {
 
   work: [
     {
+      company: "SAKEC",
+      title: "Technical Secretary",
+      logoUrl: "/aurum.png",
+      start: "2022",
+      end: "2023", // Or whenever your term ended
+      description: "Led technical initiatives across the university, organized tech events, and fostered innovation among students.",
+      location: "Mumbai",
+      type: ["Leadership"]
+    },
+    {
+      company: "SAKEC",
+      title: "Entrepreneurship Cell Head",
+      logoUrl: "/ecell.png",
+      start: "2022",
+      end: "2023", // Or whenever your term ended
+      description: "Spearheaded entrepreneurship programs, mentored student startups, and organized workshops to promote business acumen.",
+      location: "Mumbai",
+      type: ["Leadership"]
+    },
+    {
       company: "Creative Finserve Pvt. Ltd.",
       href: "https://creativefinserve.com",
       badges: [],
       location: "Mumbai, India",
       title: "Data Science Intern",
-      logoUrl: "", // Add logo path
+      logoUrl: "/Creative Finserve.jpeg", // Add logo path
       start: "Dec 2022",
       end: "Present",
       description: "Utilizing deep learning techniques to extract insights from complex data sets and drive decision-making. Engaging in Data Analysis and Machine Learning, expanding skill set in additional areas.",
@@ -55,7 +89,7 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "Artificial Intelligence Intern",
-      logoUrl: "", // Add logo path
+      logoUrl: "/intel.jpeg", // Add logo path
       start: "Jun 2023",
       end: "Oct 2023",
       description: "Worked on various projects spanning Computer Vision to Natural Language Processing, contributing to cutting-edge AI technologies.",
@@ -66,7 +100,7 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "Computer Vision and AI Intern",
-      logoUrl: "", // Add logo path
+      logoUrl: "/ibm.png", // Add logo path
       start: "Dec 2022",
       end: "Feb 2023",
       description: "Contributed to the development of an Advanced Driver Assistance System (ADAS). Developed ADAS-based systems for business process optimization and automation. Collaborated with cross-functional teams to implement AI solutions, gaining experience in Machine Learning and leadership.",
@@ -77,7 +111,7 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "Machine Learning Intern",
-      logoUrl: "", // Add logo path
+      logoUrl: "/acmegrade.png", // Add logo path
       start: "Apr 2022",
       end: "Jun 2022",
       description: "Supported the data science team with data cleaning, wrangling, modeling, and analysis. Developed proficiency in PyTorch and advanced Deep Learning techniques.",
@@ -88,12 +122,12 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "React and React Native Development Intern",
-      logoUrl: "", // Add logo path
+      logoUrl: "/dotminds.jpeg", // Add logo path
       start: "Mar 2022",
       end: "May 2022",
       description: "Assisted development team with front-end web and mobile app development using React and React Native. Took on responsibilities in development and support, contributing to the successful completion of multiple projects.",
     },
-  ],
+  ] as WorkItem[],
   
   education: [
     {
@@ -101,7 +135,7 @@ export const DATA = {
       href: "https://www.shahandanchor.com",
       degree: "Bachelor of Engineering in Artificial Intelligence and Data Science",
       website: "https://www.shahandanchor.com",
-      logoUrl: "", // Replace with actual logo path
+      logoUrl: "/Sakec logo (2).png", // Replace with actual logo path
       start: "2020",
       end: "2024 (Expected)",
       location: "Mumbai, India",
@@ -111,7 +145,7 @@ export const DATA = {
       href: "https://wlu.ca",
       degree: "Junior College",
       website:'',
-      logoUrl: "/laurier.png",
+      logoUrl: "KBP.png",
       start: "2018",
       end: "2020",
       location: "Mumbai, India",
@@ -121,7 +155,7 @@ export const DATA = {
       href: "https://uwaterloo.ca",
       degree: "Middile School and High School",
       website: "https://www.lodhaworldschool.com",
-      logoUrl: "/waterloo.png",
+      logoUrl: "/lwsp.jpeg",
       start: "2016",
       end: "2018",
       location: "Mumbai, India",
@@ -253,385 +287,93 @@ export const DATA = {
   ],
   hackathons: [
     {
-      title: "Hack Western 5",
-      dates: "November 23rd - 25th, 2018",
-      location: "London, Ontario",
+      title: "Unscript 2023 AI/ML",
+      dates: "February 11th - 12th, 2023",
+      location: "Mumbai",
       description:
-        "Developed a mobile application which delivered bedtime stories to children using augmented reality.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-western.png",
-      mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
-      links: [],
-    },
-    {
-      title: "Hack The North",
-      dates: "September 14th - 16th, 2018",
-      location: "Waterloo, Ontario",
-      description:
-        "Developed a mobile application which delivers university campus wide events in real time to all students.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-the-north.png",
-      mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
-      links: [],
-    },
-    {
-      title: "FirstNet Public Safety Hackathon",
-      dates: "March 23rd - 24th, 2018",
-      location: "San Francisco, California",
-      description:
-        "Developed a mobile application which communcicates a victims medical data from inside an ambulance to doctors at hospital.",
-      icon: "public",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/firstnet.png",
-      links: [],
-    },
-    {
-      title: "DeveloperWeek Hackathon",
-      dates: "February 3rd - 4th, 2018",
-      location: "San Francisco, California",
-      description:
-        "Developed a web application which aggregates social media data regarding cryptocurrencies and predicts future prices.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/developer-week.jpg",
+        "We built a web app that analyzes document images for readability. It was challenging to implement the classification system, but seeing it accurately categorize handwritten and scanned docs was incredibly satisfying. Winning felt amazing and validated our hard work!",
+      image: "/unscript.jpg",
+      win: "Winner",
       links: [
         {
-          title: "Github",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/cryptotrends/cryptotrends",
-        },
-      ],
-    },
-    {
-      title: "HackDavis",
-      dates: "January 20th - 21st, 2018",
-      location: "Davis, California",
-      description:
-        "Developed a mobile application which allocates a daily carbon emission allowance to users to move towards a sustainable environment.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-davis.png",
-      win: "Best Data Hack",
-      mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2018/white.svg",
-      links: [
-        {
-          title: "Devpost",
+          title: "Project",
           icon: <Icons.globe className="h-4 w-4" />,
-          href: "https://devpost.com/software/my6footprint",
-        },
-        {
-          title: "ML",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/Wallet6/my6footprint-machine-learning",
-        },
-        {
-          title: "iOS",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/Wallet6/CarbonWallet",
-        },
-        {
-          title: "Server",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/Wallet6/wallet6-server",
+          href: "https://devfolio.co/projects/klearstack-734e",
         },
       ],
     },
     {
-      title: "ETH Waterloo",
-      dates: "October 13th - 15th, 2017",
-      location: "Waterloo, Ontario",
+      title: "ChatGPT API & Whisper API Global Hackathon",
+      dates: "March 24th - 26th, 2023",
+      location: "Hybrid",
       description:
-        "Developed a blockchain application for doctors and pharmacists to perform trustless transactions and prevent overdosage in patients.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/eth-waterloo.png",
+        "48 hours of pure adrenaline! We created a voice-controlled AI assistant that could transcribe, summarize, and respond to spoken queries. Integrating ChatGPT and Whisper APIs was tricky, but the end result was mind-blowing. Learned tons about API integration and speech processing.",
+      image: "/chtandwhisper.png",
       links: [
         {
-          title: "Organization",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/ethdocnet",
-        },
-      ],
-    },
-    {
-      title: "Hack The North",
-      dates: "September 15th - 17th, 2017",
-      location: "Waterloo, Ontario",
-      description:
-        "Developed a virtual reality application allowing users to see themselves in third person.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-the-north.png",
-      mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2017/white.svg",
-      links: [
-        {
-          title: "Streamer Source",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/justinmichaud/htn2017",
-        },
-        {
-          title: "Client Source",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/dillionverma/RTSPClient",
-        },
-      ],
-    },
-    {
-      title: "Hack The 6ix",
-      dates: "August 26th - 27th, 2017",
-      location: "Toronto, Ontario",
-      description:
-        "Developed an open platform for people shipping items to same place to combine shipping costs and save money.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-the-6ix.jpg",
-      mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2017/white.svg",
-      links: [
-        {
-          title: "Source",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/ShareShip/ShareShip",
-        },
-        {
-          title: "Site",
+          title: "Event",
           icon: <Icons.globe className="h-4 w-4" />,
-          href: "https://share-ship.herokuapp.com/",
+          href: "https://lablab.ai/event/chatgpt-api-and-whisper-api-global-hackathon",
         },
       ],
     },
     {
-      title: "Stupid Hack Toronto",
-      dates: "July 23rd, 2017",
-      location: "Toronto, Ontario",
+      title: "Anthropic AI Hackathon",
+      dates: "May 26th - June 2nd, 2023",
+      location: "Hybrid",
       description:
-        "Developed a chrome extension which tracks which facebook profiles you have visited and immediately texts your girlfriend if you visited another girls page.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/stupid-hackathon.png",
+        "Spent a week diving deep into Anthropic's Claude API. We built an AI-powered writing coach that offers real-time feedback and suggestions. It was fascinating to see how the AI could understand context and nuance in writing. This experience really opened our eyes to the potential of large language models.",
+      image: "/Anthropic.png",
       links: [
         {
-          title: "Source",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/nsagirlfriend/nsagirlfriend",
-        },
-      ],
-    },
-    {
-      title: "Global AI Hackathon - Toronto",
-      dates: "June 23rd - 25th, 2017",
-      location: "Toronto, Ontario",
-      description:
-        "Developed a python library which can be imported to any python game and change difficulty of the game based on real time emotion of player. Uses OpenCV and webcam for facial recognition, and a custom Machine Learning Model trained on a [Kaggle Emotion Dataset](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/leaderboard) using [Tensorflow](https://www.tensorflow.org/Tensorflow) and [Keras](https://keras.io/). This project recieved 1st place prize at the Global AI Hackathon - Toronto and was also invited to demo at [NextAI Canada](https://www.nextcanada.com/next-ai).",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/global-ai-hackathon.jpg",
-      win: "1st Place Winner",
-      links: [
-        {
-          title: "Article",
+          title: "Event",
           icon: <Icons.globe className="h-4 w-4" />,
-          href: "https://syncedreview.com/2017/06/26/global-ai-hackathon-in-toronto/",
-        },
-        {
-          title: "Source",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/TinySamosas/",
+          href: "https://lablab.ai/event/anthropic-ai-hackathon",
         },
       ],
     },
     {
-      title: "McGill AI for Social Innovation Hackathon",
-      dates: "June 17th - 18th, 2017",
-      location: "Montreal, Quebec",
+      title: "Eleven Labs AI Hackathon",
+      dates: "July 28th - 31st, 2023",
+      location: "Hybrid",
       description:
-        "Developed realtime facial microexpression analyzer using AI",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/ai-for-social-good.jpg",
-      links: [],
-    },
-    {
-      title: "Open Source Circular Economy Days Hackathon",
-      dates: "June 10th, 2017",
-      location: "Toronto, Ontario",
-      description:
-        "Developed a custom admin interface for food waste startup <a href='http://genecis.co/'>Genecis</a> to manage their data and provide analytics.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/open-source-circular-economy-days.jpg",
-      win: "1st Place Winner",
+        "We created a multilingual audiobook generator using Eleven Labs' voice AI. The challenge of maintaining emotional consistency across languages was tough but rewarding. Hearing our favorite books in different voices and languages was surreal. This project really showcased the power of AI in creative industries.",
+      image: "/Eleven (2).png",
       links: [
         {
-          title: "Source",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/dillionverma/genecis",
-        },
-      ],
-    },
-    {
-      title: "Make School's Student App Competition 2017",
-      dates: "May 19th - 21st, 2017",
-      location: "International",
-      description: "Improved PocketDoc and submitted to online competition",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/make-school-hackathon.png",
-      win: "Top 10 Finalist | Honourable Mention",
-      links: [
-        {
-          title: "Medium Article",
+          title: "Event",
           icon: <Icons.globe className="h-4 w-4" />,
-          href: "https://medium.com/make-school/the-winners-of-make-schools-student-app-competition-2017-a6b0e72f190a",
+          href: "https://lablab.ai/event/eleven-labs-ai-hackathon",
         },
+      ],
+    },
+    {
+      title: "Autonomous Agents Hackathon",
+      dates: "August 18th - 21st, 2023",
+      location: "Hybrid",
+      description:
+        "We developed an AI-driven smart home system that learns and adapts to user behaviors. Balancing autonomy with user control was challenging but crucial. Seeing our agent make smart decisions about energy usage and comfort settings was incredibly cool. This hackathon really pushed our understanding of AI decision-making.",
+      image: "/Agents (2).png",
+      links: [
         {
-          title: "Devpost",
+          title: "Event",
           icon: <Icons.globe className="h-4 w-4" />,
-          href: "https://devpost.com/software/pocketdoc-react-native",
-        },
-        {
-          title: "YouTube",
-          icon: <Icons.youtube className="h-4 w-4" />,
-          href: "https://www.youtube.com/watch?v=XwFdn5Rmx68",
-        },
-        {
-          title: "Source",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/dillionverma/pocketdoc-react-native",
+          href: "https://lablab.ai/event/autonomous-agents-hackathon",
         },
       ],
     },
     {
-      title: "HackMining",
-      dates: "May 12th - 14th, 2017",
-      location: "Toronto, Ontario",
-      description: "Developed neural network to optimize a mining process",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-mining.png",
-      links: [],
-    },
-    {
-      title: "Waterloo Equithon",
-      dates: "May 5th - 7th, 2017",
-      location: "Waterloo, Ontario",
+      title: "Generative AI Hackathon",
+      dates: "December 2nd - 4th, 2023",
+      location: "Hybrid",
       description:
-        "Developed Pocketdoc, an app in which you take a picture of a physical wound, and the app returns common solutions or cures to the injuries or diseases.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/waterloo-equithon.png",
+        "In just 48 hours, we built a generative AI tool that creates personalized workout plans. Integrating Cohere's AI with fitness principles was tough but exciting. Seeing the AI adapt plans based on user feedback was a game-changer. This hackathon showed us how AI can make a real difference in people's daily lives.",
+      image: "/Generativeai.png",
       links: [
         {
-          title: "Devpost",
+          title: "Event",
           icon: <Icons.globe className="h-4 w-4" />,
-          href: "https://devpost.com/software/pocketdoc-react-native",
-        },
-        {
-          title: "YouTube",
-          icon: <Icons.youtube className="h-4 w-4" />,
-          href: "https://www.youtube.com/watch?v=XwFdn5Rmx68",
-        },
-        {
-          title: "Source",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/dillionverma/pocketdoc-react-native",
-        },
-      ],
-    },
-    {
-      title: "SpaceApps Waterloo",
-      dates: "April 28th - 30th, 2017",
-      location: "Waterloo, Ontario",
-      description:
-        "Developed Earthwatch, a web application which allows users in a plane to virtually see important points of interest about the world below them. They can even choose to fly away from their route and then fly back if they choose. Special thanks to CesiumJS for providing open source world and plane models.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/space-apps.png",
-      links: [
-        {
-          title: "Source",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/dillionverma/earthwatch",
-        },
-      ],
-    },
-    {
-      title: "MHacks 9",
-      dates: "March 24th - 26th, 2017",
-      location: "Ann Arbor, Michigan",
-      description:
-        "Developed Super Graphic Air Traffic, a VR website made to introduce people to the world of air traffic controlling. This project was built completely using THREE.js as well as a node backend server.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/mhacks-9.png",
-      mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2017/white.svg",
-      links: [
-        {
-          title: "Source",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/dillionverma/threejs-planes",
-        },
-      ],
-    },
-    {
-      title: "StartHacks I",
-      dates: "March 4th - 5th, 2017",
-      location: "Waterloo, Ontario",
-      description:
-        "Developed at StartHacks 2017, Recipic is a mobile app which allows you to take pictures of ingredients around your house, and it will recognize those ingredients using ClarifAI image recognition API and return possible recipes to make. Recipic recieved 1st place at the hackathon for best pitch and hack.",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/starthacks.png",
-      win: "1st Place Winner",
-      mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2017/white.svg",
-      links: [
-        {
-          title: "Source (Mobile)",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/mattBlackDesign/recipic-ionic",
-        },
-        {
-          title: "Source (Server)",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/mattBlackDesign/recipic-rails",
-        },
-      ],
-    },
-    {
-      title: "QHacks II",
-      dates: "February 3rd - 5th, 2017",
-      location: "Kingston, Ontario",
-      description:
-        "Developed a mobile game which enables city-wide manhunt with random lobbies",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/qhacks.png",
-      mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2017/white.svg",
-      links: [
-        {
-          title: "Source (Mobile)",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/dillionverma/human-huntr-react-native",
-        },
-        {
-          title: "Source (API)",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/mattBlackDesign/human-huntr-rails",
-        },
-      ],
-    },
-    {
-      title: "Terrible Hacks V",
-      dates: "November 26th, 2016",
-      location: "Waterloo, Ontario",
-      description:
-        "Developed a mock of Windows 11 with interesting notifications and functionality",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/terrible-hacks-v.png",
-      links: [
-        {
-          title: "Source",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/justinmichaud/TerribleHacks2016-Windows11",
-        },
-      ],
-    },
-    {
-      title: "Portal Hackathon",
-      dates: "October 29, 2016",
-      location: "Kingston, Ontario",
-      description:
-        "Developed an internal widget for uploading assignments using Waterloo's portal app",
-      image:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/portal-hackathon.png",
-      links: [
-        {
-          title: "Source",
-          icon: <Icons.github className="h-4 w-4" />,
-          href: "https://github.com/UWPortalSDK/crowmark",
+          href: "https://lablab.ai/event/generative-ai-hackathon",
         },
       ],
     },

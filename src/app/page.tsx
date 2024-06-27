@@ -9,6 +9,7 @@ import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
+import { PublicationCard } from "@/components/publication-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
@@ -110,24 +111,25 @@ export default function Page() {
       <h2 className="text-xl font-bold">Work Experience</h2>
     </BlurFade>
     {DATA.work.map((work, id) => (
-      <BlurFade
-        key={work.company + work.start}
-        delay={BLUR_FADE_DELAY * 6 + id * 0.05}
-      >
-        <ResumeCard
-          logoUrl={work.logoUrl}
-          altText={work.company}
-          title={work.company}
-          subtitle={work.title}
-          href={work.href}
-          badges={work.badges}
-          start={work.start}
-          end={work.end || "Present"}
-          description={work.description}
-          location={work.location}
-        />
-      </BlurFade>
-    ))}
+  <BlurFade
+    key={work.company + work.start}
+    delay={BLUR_FADE_DELAY * 6 + id * 0.05}
+  >
+    <ResumeCard
+                logoUrl={work.logoUrl}
+                altText={work.company}
+                title={work.title}
+                subtitle={work.company}
+                href={work.href}
+                badges={work.badges || []}
+                type={work.type || []}
+                start={work.start}
+                end={work.end}
+                description={work.description}
+                location={work.location}
+              />
+            </BlurFade>
+))}
   </div>
 </section>
       <section id="education">
@@ -141,19 +143,16 @@ export default function Page() {
               delay={BLUR_FADE_DELAY * 8 + id * 0.05}
             >
                <ResumeCard
-                key={education.school}
                 logoUrl={education.logoUrl}
                 altText={education.school}
                 title={education.school}
                 subtitle={education.degree}
                 href={education.website}
-                // Replace this line:
-                // period={`${education.start} - ${education.end}`}
-                // With these two lines:
                 start={education.start}
                 end={education.end}
                 location={education.location}
-  />
+                description={`${education.degree} at ${education.school}`}
+              />
             </BlurFade>
           ))}
         </div>
@@ -255,7 +254,44 @@ export default function Page() {
             </ul>
           </BlurFade>
         </div>
-      </section>      
+      </section>
+
+      <section id="publications">
+        <div className="space-y-12 w-full py-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 18}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  Publications
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  My Research Work
+                </h2>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Here are some of my published works and research papers.
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 19}>
+            <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
+              {DATA.publications.map((publication, id) => (
+                <BlurFade
+                  key={publication.title}
+                  delay={BLUR_FADE_DELAY * 20 + id * 0.05}
+                >
+                  <PublicationCard
+                    title={publication.title}
+                    publisher={publication.publisher}
+                    url={publication.url}
+                  />
+                </BlurFade>
+              ))}
+            </ul>
+          </BlurFade>
+        </div>
+      </section>
+
       <section id="contact">
   <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
     <BlurFade delay={BLUR_FADE_DELAY * 16}>

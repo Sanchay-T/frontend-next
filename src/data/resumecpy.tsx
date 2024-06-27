@@ -1,5 +1,6 @@
 import { Icons } from "@/components/icons";
 
+
 export const DATA = {
   name: "Sanchay S. Thalnerkar",
   initials: "ST",
