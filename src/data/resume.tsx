@@ -302,7 +302,7 @@ export const DATA = {
       issueDate: "Jul 2022",
       credentialId: "e06626dde36882649134ec04fa7ab865",
       skills: ["Deep Learning", "Machine Learning", "Remote Sensing"],
-      logo: "/Isro logo.png",
+      logo: "/ISRO logo.png",
       verificationUrl: "https://elearning.iirs.gov.in/edusat_lms/public/studentCertificate/MjAyMjEwMDE1NjIzODE=/MTAw"
     },
     {
@@ -356,7 +356,7 @@ export const DATA = {
       issueDate: "Mar 2021",
       credentialId: "82b3b11cc73b676d79350e38ce2d17b6",
       skills: ["Autonomous Systems", "Navigation", "AI"],
-      logo: "/Isro logo.png",
+      logo: "/ISRO logo.png",
       verificationUrl: "https://certificate.iirs.gov.in/"
     },
     {
@@ -365,7 +365,7 @@ export const DATA = {
       issueDate: "Dec 2022",
       credentialId: "6b070f63325d98376c70ec2e5a4e78f1d22a426c9678208be98a07f896e3171d",
       skills: ["Django", "Web Development", "Deployment"],
-      logo: "/Linkedin logo.png",
+      logo: "/LinkedIn logo.png",
       verificationUrl: "https://www.linkedin.com/learning/certificates/6b070f63325d98376c70ec2e5a4e78f1d22a426c9678208be98a07f896e3171d"
     },
     {
