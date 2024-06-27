@@ -19,6 +19,7 @@ import Cal, { getCalApi } from "@calcom/embed-react";
 const BLUR_FADE_DELAY = 0.04;
 
 
+
 function CalendarEmbed() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
