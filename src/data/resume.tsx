@@ -25,7 +25,7 @@ export const DATA = {
   avatarUrl: "/me3.png", // Replace with your actual avatar image path
   skills: [
     "Python", "Machine Learning", "Deep Learning", "Computer Vision",
-    "Natural Language Processing", "Django", "React", "React Native",
+    "NLP", "Django", "React", "React Native",
     "PyTorch", "Git", "AWS", "Azure", "Docker", "Digital Ocean"
   ],
   contact: {
@@ -285,6 +285,109 @@ export const DATA = {
         "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
     },
   ],
+
+  certifications: [
+    {
+      title: "AI Programming with Python",
+      issuer: "Udacity",
+      issueDate: "Oct 2023",
+      credentialId: "7a992bde-0ae7-11ee-8513-9bbbd3e00830",
+      skills: ["Deep Learning", "Machine Learning", "Python", "AI"],
+      logo: "/Udacity logo.png",
+      verificationUrl: "https://confirm.udacity.com/e/7a992bde-0ae7-11ee-8513-9bbbd3e00830"
+    },
+    {
+      title: "Machine Learning to Deep Learning",
+      issuer: "ISRO - Indian Space Research Organization",
+      issueDate: "Jul 2022",
+      credentialId: "e06626dde36882649134ec04fa7ab865",
+      skills: ["Deep Learning", "Machine Learning", "Remote Sensing"],
+      logo: "/Isro logo.png",
+      verificationUrl: "https://elearning.iirs.gov.in/edusat_lms/public/studentCertificate/MjAyMjEwMDE1NjIzODE=/MTAw"
+    },
+    {
+      title: "Microsoft Certified: Azure AI Fundamentals",
+      issuer: "Microsoft",
+      issueDate: "Jul 2023",
+      credentialId: "DCC864E0B4C9D1DA",
+      skills: ["Machine Learning", "Artificial Intelligence", "Microsoft Azure"],
+      logo: "/Microsoft logo.png",
+      verificationUrl: "https://learn.microsoft.com/api/credentials/share/en-us/SanchayThalnerkar-5006/DCC864E0B4C9D1DA"
+    },
+    {
+      title: "Building LLM-Powered Applications",
+      issuer: "Weights & Biases",
+      issueDate: "Sep 2023",
+      credentialId: "82780554",
+      skills: ["LLM", "AI Applications", "Machine Learning"],
+      logo: "/Weights and Biases Logo.png",
+      verificationUrl: "https://www.credential.net/ca941bc9-2c3d-4dfc-90d2-1e333568f164"
+    },
+    {
+      title: "Artificial Intelligence Fundamentals",
+      issuer: "IBM",
+      issueDate: "Jan 2023",
+      credentialId: "7473a084-1e74-4bbe-a258-0bb111aee2bc",
+      skills: ["Artificial Intelligence", "Machine Learning"],
+      logo: "/Ibm logo.png",
+      verificationUrl: "https://www.credly.com/badges/7473a084-1e74-4bbe-a258-0bb111aee2bc/linked_in_profile"
+    },
+    {
+      title: "Google Cloud Essentials",
+      issuer: "Google Cloud Community India",
+      issueDate: "May 2022",
+      credentialId: "1902204",
+      skills: ["Data Science", "Cloud Computing", "Machine Learning"],
+      logo: "/gc.png",
+      verificationUrl: "https://www.cloudskillsboost.google/public_profiles/60c4ab9e-7cb7-4d91-b4b7-0178157b5d30/badges/1902204?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+    },
+    {
+      title: "Machine Learning",
+      issuer: "Acmegrade",
+      issueDate: "May 2022",
+      credentialId: "AGC2204032",
+      skills: ["Data Science", "Machine Learning", "AI"],
+      logo: "/acmegrade.png",
+      verificationUrl: "https://acmegrade.com/"
+    },
+    {
+      title: "AET-Autonomous Navigation Systems (ANS)",
+      issuer: "ISRO",
+      issueDate: "Mar 2021",
+      credentialId: "82b3b11cc73b676d79350e38ce2d17b6",
+      skills: ["Autonomous Systems", "Navigation", "AI"],
+      logo: "/Isro logo.png",
+      verificationUrl: "https://certificate.iirs.gov.in/"
+    },
+    {
+      title: "Deploying Django Apps: Make Your Site Go Live",
+      issuer: "LinkedIn",
+      issueDate: "Dec 2022",
+      credentialId: "6b070f63325d98376c70ec2e5a4e78f1d22a426c9678208be98a07f896e3171d",
+      skills: ["Django", "Web Development", "Deployment"],
+      logo: "/Linkedin logo.png",
+      verificationUrl: "https://www.linkedin.com/learning/certificates/6b070f63325d98376c70ec2e5a4e78f1d22a426c9678208be98a07f896e3171d"
+    },
+    {
+      title: "Cybersecurity Essentials",
+      issuer: "Cisco",
+      issueDate: "Jun 2022",
+      credentialId: "8e057441-63ed-42fa-9178-37414589cc45",
+      skills: ["Cybersecurity", "Network Security"],
+      logo: "/Cisco logo.png",
+      verificationUrl: "https://www.credly.com/badges/8e057441-63ed-42fa-9178-37414589cc45?source=linked_in_profile"
+    },
+    {
+      title: "Notion Essentials Badge",
+      issuer: "Notion",
+      issueDate: "May 2024",
+      credentialId: "e5d3e5e9-01e8-4c88-b18f-1942efeac2c5",
+      skills: ["Productivity", "Project Management"],
+      logo: "/Notion logo.jpeg",
+      verificationUrl: "https://www.credly.com/badges/e5d3e5e9-01e8-4c88-b18f-1942efeac2c5/linked_in_profile"
+    }
+  ],
+
   hackathons: [
     {
       title: "Unscript 2023 AI/ML",

@@ -10,6 +10,8 @@ import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { PublicationCard } from "@/components/publication-card";
+import { CertificationsSection } from "@/components/certifications-section";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
@@ -212,6 +214,10 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <BlurFade delay={BLUR_FADE_DELAY * 13}>
+      <CertificationsSection certifications={DATA.certifications} />
+
+      </BlurFade>
       <section id="hackathons">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 13}>
