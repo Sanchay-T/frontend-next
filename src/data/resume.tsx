@@ -320,7 +320,7 @@ export const DATA = {
       issueDate: "Jan 2023",
       credentialId: "7473a084-1e74-4bbe-a258-0bb111aee2bc",
       skills: ["Artificial Intelligence", "Machine Learning"],
-      logo: "/Ibm logo.png",
+      logo: "/IBM logo.png",
       verificationUrl: "https://www.credly.com/badges/7473a084-1e74-4bbe-a258-0bb111aee2bc/linked_in_profile"
     },
     {

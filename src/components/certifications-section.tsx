@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { FaCertificate, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaCertificate } from 'react-icons/fa';
 
 interface Certification {
   title: string;
@@ -15,6 +15,7 @@ interface Certification {
   logo: string;
   verificationUrl: string;
 }
+
 interface CertificationsSectionProps {
   certifications: ReadonlyArray<Certification>;
 }
@@ -73,16 +74,43 @@ const CertificationCard: React.FC<Certification> = ({
 
 export const CertificationsSection: React.FC<CertificationsSectionProps> = ({ certifications }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isHovering, setIsHovering] = useState(false);
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 330; // Adjust based on card width + gap
-      scrollContainerRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) return;
+
+    let animationFrameId: number;
+    let lastTimestamp = 0;
+
+    const scroll = (timestamp: number) => {
+      if (lastTimestamp === 0) {
+        lastTimestamp = timestamp;
+      }
+
+      const elapsed = timestamp - lastTimestamp;
+
+      if (elapsed > 16) { // Adjust scroll every 16ms for smoother animation (approx. 60 FPS)
+        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+          scrollContainer.scrollLeft = 0;
+        } else {
+          scrollContainer.scrollLeft += isHovering ? 0.3 : 1; // Slightly increased scroll speed
+        }
+        lastTimestamp = timestamp;
+      }
+
+      animationFrameId = requestAnimationFrame(scroll);
+    };
+
+    animationFrameId = requestAnimationFrame(scroll);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [isHovering]);
+
+  const handleMouseEnter = () => setIsHovering(true);
+  const handleMouseLeave = () => setIsHovering(false);
 
   return (
     <section id="certifications" className="w-full py-12">
@@ -94,22 +122,16 @@ export const CertificationsSection: React.FC<CertificationsSectionProps> = ({ ce
           Continuous Learning
         </h2>
         <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed max-w-[800px] mx-auto">
-          I&apos;m committed to expanding my knowledge and skills. Here are some of my recent certifications.
+          I'm committed to expanding my knowledge and skills. Here are some of my recent certifications.
         </p>
       </div>
       <div className="relative max-w-[95vw] mx-auto">
-        <Button
-          variant="outline"
-          size="icon"
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10"
-          onClick={() => scroll('left')}
-        >
-          <FaChevronLeft />
-        </Button>
         <div
           ref={scrollContainerRef}
           className="flex overflow-x-auto space-x-6 py-4 px-4 scrollbar-hide"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           {certifications.map((cert, index) => (
             <motion.div
@@ -122,14 +144,6 @@ export const CertificationsSection: React.FC<CertificationsSectionProps> = ({ ce
             </motion.div>
           ))}
         </div>
-        <Button
-          variant="outline"
-          size="icon"
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10"
-          onClick={() => scroll('right')}
-        >
-          <FaChevronRight />
-        </Button>
       </div>
     </section>
   );
