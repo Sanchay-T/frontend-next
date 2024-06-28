@@ -45,10 +45,7 @@ export const DATA = {
         url: "https://x.com/7anchay",
         icon: Icons.x,
       },
-      Youtube: {
-        url: "https://youtube.com/c/dillionverma",
-        icon: Icons.youtube,
-      },
+      
     },
   },
 
