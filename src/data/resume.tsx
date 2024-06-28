@@ -1,4 +1,5 @@
 import { Icons } from "@/components/icons";
+import { Github, Book, Globe } from 'lucide-react';
 
 
 type WorkItem = {
@@ -163,126 +164,113 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Chat Collect",
-      href: "https://chatcollect.com",
-      dates: "Jan 2024 - Feb 2024",
+      title: "Groq-Llama Content Studio",
+      href: "https://github.com/<your-username>/AI-Content-Creation-Workflow",
+      dates: "June 2024",
       active: true,
       description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+        "Developed an AI-powered content creation workflow using Meta's Llama 3 model and Groq's high-speed inference engine. This Next.js project streamlines the process of generating high-quality content with specialized AI agents for planning, writing, and editing.",
       technologies: [
         "Next.js",
         "Typescript",
-        "PostgreSQL",
-        "Prisma",
+        "Llama 3",
+        "Groq API",
+        "AI Agents",
+        "Streamlit",
         "TailwindCSS",
-        "Stripe",
         "Shadcn UI",
-        "Magic UI",
       ],
       links: [
         {
           type: "Website",
-          href: "https://chatcollect.com",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
-    },
-    {
-      title: "Magic UI",
-      href: "https://magicui.design",
-      dates: "June 2023 - Present",
-      active: true,
-      description:
-        "Designed, developed and sold animated UI components for developers.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://magicui.design",
+          href: "https://github.com/<your-username>/AI-Content-Creation-Workflow",
           icon: <Icons.globe className="size-3" />,
         },
         {
           type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
+          href: "https://github.com/<your-username>/AI-Content-Creation-Workflow",
           icon: <Icons.github className="size-3" />,
         },
       ],
       image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      video: "/Groq Llama Content Studio video.mp4",
     },
     {
-      title: "llm.report",
-      href: "https://llm.report",
-      dates: "April 2023 - September 2023",
+      title: "AI Research Agent",
+      href: "https://github.com/Sanchay-T/Research-Agent.git",
+      dates: "June 2023",
       active: true,
       description:
-        "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
+        "Built an AI-powered research agent using LangChain and OpenAI's GPT models. This tool can perform detailed research on any topic, scrape websites, and produce fact-based results with references.",
       technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
+        "Python",
+        "Streamlit",
+        "LangChain",
+        "OpenAI GPT-3.5",
+        "BeautifulSoup",
+        "Google Serper API",
       ],
       links: [
-        {
-          type: "Website",
-          href: "https://llm.report",
-          icon: <Icons.globe className="size-3" />,
-        },
         {
           type: "Source",
-          href: "https://github.com/dillionverma/llm.report",
+          href: "https://github.com/Sanchay-T/Research-Agent.git",
           icon: <Icons.github className="size-3" />,
         },
       ],
       image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
+      video: "/Research Agent.mp4",
     },
-    {
-      title: "Automatic Chat",
-      href: "https://automatic.chat",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://automatic.chat",
-          icon: <Icons.globe className="size-3" />,
+    { 
+      title: "Ultimate GPT-4o Chatbot Experience", 
+      href: "https://github.com/Sanchay-T/Ultimate-GPT4o-Chatbot-Experience.git", 
+      dates: "June 2024", 
+      active: true, 
+      description: "Developed an advanced chatbot application leveraging OpenAI's GPT-4o model. This Next.js project showcases real-time interactions, multi-modal input support, and customizable settings for an enhanced AI conversation experience.", 
+      technologies: [ 
+        "Next.js", 
+        "Python", 
+        "Streamlit", 
+        "OpenAI GPT-4o", 
+        "TailwindCSS", 
+        "Shadcn UI", 
+      ], 
+      links: [ 
+        { 
+          type: "Source", 
+          href: "https://github.com/Sanchay-T/Ultimate-GPT4o-Chatbot-Experience.git", 
+          icon: <Github className="size-3" />, 
+        }, 
+        { 
+          type: "Tutorial", 
+          href: "https://lablab.ai/t/unleashing-the-power-of-gpt-4o-a-comprehensive-guide", 
+          icon: <Book className="size-3" />, 
+        }, 
+      ], 
+      image: "", 
+      video: "/Gpt40.mp4", 
+    },
+    { 
+      title: "LlamaIndex-MongoDB-TruLens", 
+      href: "https://github.com/Sanchay-T/LlamaIndex-MongoDB-TruLens.git", 
+      dates: "April 2024", 
+      active: true, 
+      description: "Developed an E-commerce FAQ Chatbot using LlamaIndex, MongoDB, and TruLens. This project integrates advanced language models with a MongoDB database and incorporates feedback analysis for continuous improvement.", 
+      technologies: [ 
+        "Python", 
+        "LlamaIndex", 
+        "MongoDB", 
+        "TruLens", 
+        "OpenAI", 
+      ], 
+      links: [ 
+        { 
+          type: "Source", 
+          href: "https://github.com/Sanchay-T/LlamaIndex-MongoDB-TruLens.git", 
+          icon: <Github className="size-3" />, 
         },
-      ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      ], 
+      image: "", 
+      video: "/qnfsystem.mp4", 
     },
   ],
 
