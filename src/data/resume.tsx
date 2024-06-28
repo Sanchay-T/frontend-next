@@ -165,7 +165,7 @@ export const DATA = {
   projects: [
     {
       title: "Groq-Llama Content Studio",
-      href: "https://github.com/<your-username>/AI-Content-Creation-Workflow",
+      href: "https://github.com/Sanchay-T/Groq-Llama-Content-Studio",
       dates: "June 2024",
       active: true,
       description:
@@ -182,8 +182,8 @@ export const DATA = {
       ],
       links: [
         {
-          type: "Website",
-          href: "https://github.com/<your-username>/AI-Content-Creation-Workflow",
+          type: "Tutorial",
+          href: "https://lablab.ai/t/mastering-ai-content-creation-leveraging-llama-3-and-groq-api",
           icon: <Icons.globe className="size-3" />,
         },
         {
@@ -236,15 +236,16 @@ export const DATA = {
       ], 
       links: [ 
         { 
-          type: "Source", 
-          href: "https://github.com/Sanchay-T/Ultimate-GPT4o-Chatbot-Experience.git", 
-          icon: <Github className="size-3" />, 
-        }, 
-        { 
           type: "Tutorial", 
           href: "https://lablab.ai/t/unleashing-the-power-of-gpt-4o-a-comprehensive-guide", 
           icon: <Book className="size-3" />, 
         }, 
+        { 
+          type: "Source", 
+          href: "https://github.com/Sanchay-T/Ultimate-GPT4o-Chatbot-Experience.git", 
+          icon: <Github className="size-3" />, 
+        }, 
+        
       ], 
       image: "", 
       video: "/Gpt40.mp4", 
@@ -263,6 +264,11 @@ export const DATA = {
         "OpenAI", 
       ], 
       links: [ 
+        { 
+          type: "Tutorial", 
+          href: "https://lablab.ai/t/visionary-data-leveraging-trulens-with-mongodb-and-llamaindex", 
+          icon: <Book className="size-3" />, 
+        }, 
         { 
           type: "Source", 
           href: "https://github.com/Sanchay-T/LlamaIndex-MongoDB-TruLens.git", 

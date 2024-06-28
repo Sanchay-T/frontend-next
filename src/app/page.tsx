@@ -185,9 +185,18 @@ export default function Page() {
                   Check out my latest work
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
+                
+                Check out my latest work, including AI projects and in-depth tutorials for{" "}
+  <a 
+    href="https://lablab.ai/t" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="text-blue-500 hover:text-blue-700 underline"
+  >
+    lablab.ai
+  </a>
+  . I&apos;ve created innovative applications and written comprehensive guides on cutting-edge AI technologies
+
                 </p>
               </div>
             </div>
