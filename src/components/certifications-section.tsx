@@ -122,7 +122,7 @@ export const CertificationsSection: React.FC<CertificationsSectionProps> = ({ ce
           Continuous Learning
         </h2>
         <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed max-w-[800px] mx-auto">
-          I'm committed to expanding my knowledge and skills. Here are some of my recent certifications.
+          I&apos;m committed to expanding my knowledge and skills. Here are some of my recent certifications.
         </p>
       </div>
       <div className="relative max-w-[95vw] mx-auto">
