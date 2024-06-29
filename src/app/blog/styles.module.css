@@ -1,0 +1,9 @@
+.blogContainer {
+    padding-top: 0 !important;
+  }
+  
+  @media (min-width: 640px) {
+    .blogContainer {
+      padding-top: 0 !important;
+    }
+  }
