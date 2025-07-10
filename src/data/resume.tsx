@@ -22,7 +22,7 @@ export const DATA = {
   location: "Mumbai, India",
   locationLink: "https://www.google.com/maps/place/Mumbai",
   description: "ai engineer at cyphersol building fintech solutions with cutting-edge tech. obsessed with turning wild ideas into reality.",
-  summary: "hey there! i'm an ai engineer at cyphersol working on fintech solutions with ai and blockchain tech. currently building financial models for fraud detection and developing real-time systems that actually matter.\n\n\n\nwhen i'm not coding, you'll find me at hackathons or brainstorming the next big thing. always down to chat about tech, startups, or that random idea you had at 3am - especially if it involves breaking things, pushing boundaries, or making the impossible possible.",
+  summary: "ai engineer at cyphersol building fraud detection models and real-time fintech systems that actually work.\n\nwhen not coding, you'll find me at hackathons or chasing that 3am idea that'll probably change everything (or at least break something interesting).",
   avatarUrl: "/me3.png", // Replace with your actual avatar image path
   skills: [
     "Python", "JavaScript", "SQL", "TypeScript",

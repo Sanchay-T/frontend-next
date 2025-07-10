@@ -69,7 +69,7 @@ export const ResumeCard = ({
           <CardHeader className="p-0 mb-2">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-x-2 text-base">
               <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <h3 className="font-semibold leading-none text-xs sm:text-sm">
+                <h3 className="font-semibold leading-none text-xs">
                   {title}
                   {href && <ChevronRightIcon className="size-4 ml-1 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100 inline" />}
                 </h3>
@@ -109,11 +109,11 @@ export const ResumeCard = ({
                 {formatDate(start)} - {formatDate(end)}
               </div>
             </div>
-            <div className="font-sans text-xs mt-1">
+            <div className="font-sans text-xs mt-1 text-muted-foreground">
               {subtitle} • {location}
             </div>
           </CardHeader>
-          <CardContent className="p-0 text-sm sm:text-base">
+          <CardContent className="p-0 text-xs sm:text-sm text-muted-foreground">
             {description}
           </CardContent>
         </div>
