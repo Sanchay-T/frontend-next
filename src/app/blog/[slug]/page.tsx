@@ -7,7 +7,9 @@ import { Suspense } from "react";
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
-  return posts.filter(post => post !== null).map((post) => ({ slug: post.slug }));
+  return posts
+    .filter((post): post is NonNullable<typeof post> => post !== null)
+    .map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({
