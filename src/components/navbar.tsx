@@ -10,7 +10,7 @@ import {
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { HomeIcon, NotebookIcon, MessageCircleIcon } from "lucide-react";
+import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -35,7 +35,7 @@ export default function Navbar() {
             </TooltipContent>
           </Tooltip>
         </DockIcon>
-        {/* <DockIcon>
+        <DockIcon>
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
@@ -53,24 +53,6 @@ export default function Navbar() {
             </TooltipContent>
           </Tooltip>
         </DockIcon>
-        <DockIcon>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Link
-                href="/chat"
-                className={cn(
-                  buttonVariants({ variant: "ghost", size: "icon" }),
-                  "size-12"
-                )}
-              >
-                <MessageCircleIcon className="size-4" />
-              </Link>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Chat</p>
-            </TooltipContent>
-          </Tooltip>
-        </DockIcon> */}
         <Separator orientation="vertical" className="h-full" />
         {Object.entries(DATA.contact.social).map(([name, social]) => (
           <DockIcon key={name}>

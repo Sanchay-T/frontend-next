@@ -1,27 +1,46 @@
+import BlurFade from "@/components/magicui/blur-fade";
 import { getBlogPosts } from "@/data/blog";
-import BlogPagination from './BlogPagination';
+import Link from "next/link";
 
 export const metadata = {
-  title: "Insights | Sanchay Thalnerkar",
-  description: "Exploring ideas in tech, code, and beyond.",
+  title: "Blog",
+  description: "My thoughts on software development, life, and more.",
 };
+
+const BLUR_FADE_DELAY = 0.04;
 
 export default async function BlogPage() {
   const posts = await getBlogPosts();
-  const sortedPosts = posts.sort((a, b) => 
-    new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()
-  );
 
   return (
-    <section className="max-w-4xl mx-auto px-4 pb-12">
-      <div className="text-center mb-16">
-        <h1 className="inline-block text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4 leading-tight pb-1">
-          My Insights
-        </h1>
-        <div className="h-1 w-24 mx-auto bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mt-2"></div>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">Exploring the realms of technology and beyond</p>
-      </div>
-      <BlogPagination posts={sortedPosts} />
+    <section>
+      <BlurFade delay={BLUR_FADE_DELAY}>
+        <h1 className="font-medium text-2xl mb-8 tracking-tighter">blog</h1>
+      </BlurFade>
+      {posts
+        .sort((a, b) => {
+          if (
+            new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
+          ) {
+            return -1;
+          }
+          return 1;
+        })
+        .map((post, id) => (
+          <BlurFade delay={BLUR_FADE_DELAY * 2 + id * 0.05} key={post.slug}>
+            <Link
+              className="flex flex-col space-y-1 mb-4"
+              href={`/blog/${post.slug}`}
+            >
+              <div className="w-full flex flex-col">
+                <p className="tracking-tight">{post.metadata.title}</p>
+                <p className="h-6 text-xs text-muted-foreground">
+                  {post.metadata.publishedAt}
+                </p>
+              </div>
+            </Link>
+          </BlurFade>
+        ))}
     </section>
   );
 }

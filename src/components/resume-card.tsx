@@ -41,6 +41,7 @@ export const ResumeCard = ({
   location,
 }: ResumeCardProps) => {
   const isLeadershipRole = type?.includes('Leadership');
+  const isCurrentPosition = type?.includes('Current');
 
   const CardWrapper = ({ children }: { children: React.ReactNode }) => 
     href ? (
@@ -53,46 +54,58 @@ export const ResumeCard = ({
 
   return (
     <CardWrapper>
-      <Card className={`flex p-4 ${isLeadershipRole ? 'border-yellow-500 border-2' : ''}`}>
+      <Card className={`flex p-4 ${isCurrentPosition ? 'border-green-500 border-2' : isLeadershipRole ? 'border-yellow-500 border-2' : ''}`}>
         <div className="flex-none mr-4">
           <Avatar className="border size-12 bg-muted-background dark:bg-foreground">
             <AvatarImage
               src={logoUrl}
               alt={altText}
-              className="object-contain"
+              className="object-contain p-2"
             />
             <AvatarFallback>{altText[0]}</AvatarFallback>
           </Avatar>
         </div>
         <div className="flex-grow">
           <CardHeader className="p-0 mb-2">
-            <div className="flex items-center justify-between gap-x-2 text-base">
-              <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
-                {title}
-                {isLeadershipRole && (
-                  <Badge
-                    variant="outline"
-                    className="ml-2 text-xs bg-yellow-100 text-yellow-800 border-yellow-300"
-                  >
-                    Leadership Role
-                  </Badge>
-                )}
-                {badges && badges.length > 0 && (
-                  <span className="inline-flex gap-x-1 ml-2">
-                    {badges.map((badge, index) => (
-                      <Badge
-                        key={index}
-                        variant="secondary"
-                        className="align-middle text-xs"
-                      >
-                        {badge}
-                      </Badge>
-                    ))}
-                  </span>
-                )}
-                {href && <ChevronRightIcon className="size-4 ml-1 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100" />}
-              </h3>
-              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right whitespace-nowrap">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-x-2 text-base">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <h3 className="font-semibold leading-none text-xs sm:text-sm">
+                  {title}
+                  {href && <ChevronRightIcon className="size-4 ml-1 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100 inline" />}
+                </h3>
+                <div className="flex items-center gap-1">
+                  {isCurrentPosition && (
+                    <Badge
+                      variant="outline"
+                      className="text-xs bg-green-100 text-green-800 border-green-300"
+                    >
+                      Current Position
+                    </Badge>
+                  )}
+                  {isLeadershipRole && (
+                    <Badge
+                      variant="outline"
+                      className="text-xs bg-yellow-100 text-yellow-800 border-yellow-300"
+                    >
+                      Leadership Role
+                    </Badge>
+                  )}
+                  {badges && badges.length > 0 && (
+                    <span className="inline-flex gap-x-1">
+                      {badges.map((badge, index) => (
+                        <Badge
+                          key={index}
+                          variant="secondary"
+                          className="align-middle text-xs"
+                        >
+                          {badge}
+                        </Badge>
+                      ))}
+                    </span>
+                  )}
+                </div>
+              </div>
+              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-left sm:text-right">
                 {formatDate(start)} - {formatDate(end)}
               </div>
             </div>
@@ -100,7 +113,7 @@ export const ResumeCard = ({
               {subtitle} • {location}
             </div>
           </CardHeader>
-          <CardContent className="p-0 text-xs sm:text-sm">
+          <CardContent className="p-0 text-sm sm:text-base">
             {description}
           </CardContent>
         </div>

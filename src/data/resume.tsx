@@ -21,13 +21,16 @@ export const DATA = {
   url: "https://sanchaythalnerkar.com", // Replace with your actual website if you have one
   location: "Mumbai, India",
   locationLink: "https://www.google.com/maps/place/Mumbai",
-  description: "Final year engineering student specializing in AI and Data Science with a robust foundation in Blockchain.",
-  summary: "A passionate final engineering student specializing in AI and Data Science with a robust foundation in Blockchain. Aspiring to leverage expertise in Machine Learning and Deep Learning to solve complex problems and drive innovation in the tech industry.",
+  description: "ai engineer at cyphersol building fintech solutions with cutting-edge tech. obsessed with turning wild ideas into reality.",
+  summary: "hey there! i'm an ai engineer at cyphersol working on fintech solutions with ai and blockchain tech. currently building financial models for fraud detection and developing real-time systems that actually matter.\n\n\n\nwhen i'm not coding, you'll find me at hackathons or brainstorming the next big thing. always down to chat about tech, startups, or that random idea you had at 3am - especially if it involves breaking things, pushing boundaries, or making the impossible possible.",
   avatarUrl: "/me3.png", // Replace with your actual avatar image path
   skills: [
-    "Python", "Machine Learning", "Deep Learning", "Computer Vision",
-    "NLP", "Django", "React", "React Native",
-    "PyTorch", "Git", "AWS", "Azure", "Docker", "Digital Ocean"
+    "Python", "JavaScript", "SQL", "TypeScript",
+    "PyTorch", "TensorFlow", "Fine-tuning", "Model Optimization", "LLMOps",
+    "LangChain", "AutoGen", "RAG", "Vector Databases", "Pinecone", "Qdrant",
+    "OpenAI", "Claude", "Prompt Engineering", "AI Agents", "Multi-Agent Systems",
+    "n8n", "Workflow Automation", "FastAPI", "REST APIs", "Electron",
+    "AWS", "Docker", "Git", "PostgreSQL", "MongoDB"
   ],
   contact: {
     email: "sanchaythalnerkar@gmail.com",
@@ -42,8 +45,12 @@ export const DATA = {
         icon: Icons.linkedin,
       },
       X: {
-        url: "https://x.com/7anchay",
+        url: "https://x.com/kernelkook",
         icon: Icons.x,
+      },
+      Email: {
+        url: "mailto:sanchaythalnerkar@gmail.com",
+        icon: Icons.email,
       },
       
     },
@@ -51,11 +58,21 @@ export const DATA = {
 
   work: [
     {
+      company: "CypherSOL",
+      title: "AI Engineer",
+      logoUrl: "/cyphersol.png",
+      start: "Aug 2024",
+      end: "Present",
+      description: "Fine-tuned ML models for banking fraud detection and financial category prediction. Built vector database-powered RAG systems with real-time inference APIs. Developed AI agents with n8n workflow automation and multi-agent frameworks (LangChain, AutoGen).",
+      location: "Mumbai, India",
+      type: ["Current"]
+    },
+    {
       company: "SAKEC",
       title: "Technical Secretary",
       logoUrl: "/aurum.png",
-      start: "2022",
-      end: "2023", // Or whenever your term ended
+      start: "Jan 2022",
+      end: "Dec 2023",
       description: "Led technical initiatives across the university, organized tech events, and fostered innovation among students.",
       location: "Mumbai",
       type: ["Leadership"]
@@ -64,8 +81,8 @@ export const DATA = {
       company: "SAKEC",
       title: "Entrepreneurship Cell Head",
       logoUrl: "/ecell.png",
-      start: "2022",
-      end: "2023", // Or whenever your term ended
+      start: "Jan 2022",
+      end: "Dec 2023",
       description: "Spearheaded entrepreneurship programs, mentored student startups, and organized workshops to promote business acumen.",
       location: "Mumbai",
       type: ["Leadership"]
@@ -78,7 +95,7 @@ export const DATA = {
       title: "Data Science Intern",
       logoUrl: "/Creative Finserve.jpeg", // Add logo path
       start: "Dec 2022",
-      end: "Present",
+      end: "May 2024",
       description: "Utilizing deep learning techniques to extract insights from complex data sets and drive decision-making. Engaging in Data Analysis and Machine Learning, expanding skill set in additional areas.",
     },
     {
@@ -134,9 +151,10 @@ export const DATA = {
       degree: "Bachelor of Engineering in Artificial Intelligence and Data Science",
       website: "https://www.shahandanchor.com",
       logoUrl: "/Sakec logo (2).png", // Replace with actual logo path
-      start: "2020",
-      end: "2024 (Expected)",
+      start: "Aug 2020",
+      end: "May 2024",
       location: "Mumbai, India",
+      gpa: "8.8"
     },
     {
       school: "KBP",
