@@ -18,6 +18,7 @@ export default async function BlogPage() {
         <h1 className="font-medium text-2xl mb-8 tracking-tighter">blog</h1>
       </BlurFade>
       {posts
+        .filter((post): post is NonNullable<typeof post> => post !== null)
         .sort((a, b) => {
           if (
             new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)

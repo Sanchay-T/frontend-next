@@ -65,8 +65,8 @@ async function getAllPosts(dir: string) {
       return post;
     }),
   );
-  // Filter out null posts (files that don't exist or failed to load)
-  return posts.filter(post => post !== null);
+  // Filter out null posts with explicit type predicate
+  return posts.filter((post): post is NonNullable<typeof post> => post !== null);
 }
 
 export async function getBlogPosts() {
