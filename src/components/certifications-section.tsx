@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FaCertificate } from 'react-icons/fa';
+import Image from 'next/image';
 
 interface Certification {
   title: string;
@@ -40,7 +41,7 @@ const CertificationCard: React.FC<Certification> = ({
     <Card className="w-[300px] h-[400px] flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
       <CardContent className="p-6 flex flex-col h-full">
         <div className="flex items-center justify-between mb-4">
-          <img src={logo} alt={issuer} className="w-16 h-16 object-contain" />
+          <Image src={logo} alt={issuer} width={64} height={64} className="object-contain" />
           <FaCertificate className="text-3xl text-yellow-500" />
         </div>
         <h3 className="text-xl font-bold mb-2">{title}</h3>
